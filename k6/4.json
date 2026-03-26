@@ -1,0 +1,74 @@
+{
+  "productos": [
+    {
+      "nombre": "Monitor 4K Ultra HD",
+      "precio": 1199.99,
+      "stock": 20,
+      "descripcion": "Monitor de 27 pulgadas, resolución 4K, panel IPS, 60Hz, HDR10, ideal para diseño y edición profesional",
+      "imagen": null
+    },
+    {
+      "nombre": "Teclado Mecánico Gamer",
+      "precio": 249.99,
+      "stock": 45,
+      "descripcion": "Teclado mecánico con switches Cherry MX Red, retroiluminación RGB, anti-ghosting, reposamuñecas ergonómico",
+      "imagen": null
+    },
+    {
+      "nombre": "Mouse Inalámbrico Pro",
+      "precio": 89.99,
+      "stock": 120,
+      "descripcion": "Mouse ergonómico con sensor óptico de 16000 DPI, 8 botones programables, batería de 70 horas, conexión 2.4GHz y Bluetooth",
+      "imagen": null
+    },
+    {
+      "nombre": "Auriculares Gaming 7.1",
+      "precio": 159.99,
+      "stock": 78,
+      "descripcion": "Auriculares con sonido envolvente 7.1, micrófono noise-cancelling, almohadillas de espuma viscoelástica, compatibilidad multiplataforma",
+      "imagen": null
+    },
+    {
+      "nombre": "Laptop Ultrabook 14",
+      "precio": 1899.99,
+      "stock": 12,
+      "descripcion": "Laptop ultradelgada con procesador Intel Core i7, 16GB RAM, SSD 512GB, pantalla OLED 2.8K, batería de 12 horas",
+      "imagen": null
+    },
+    {
+      "nombre": "Smartphone 5G Pro",
+      "precio": 899.99,
+      "stock": 35,
+      "descripcion": "Smartphone con pantalla AMOLED de 6.7 pulgadas, cámara triple de 108MP, 8GB RAM, 256GB almacenamiento, batería 5000mAh",
+      "imagen": null
+    },
+    {
+      "nombre": "Tablet Digital 10.9",
+      "precio": 549.99,
+      "stock": 28,
+      "descripcion": "Tablet con pantalla Liquid Retina, chip A14 Bionic, compatible con lápiz digital, ideal para creativos y estudiantes",
+      "imagen": null
+    },
+    {
+      "nombre": "Disco SSD Externo 1TB",
+      "precio": 129.99,
+      "stock": 95,
+      "descripcion": "Disco SSD portátil USB 3.2, velocidades de lectura/escritura hasta 1050MB/s, compatible con PC, Mac y consolas",
+      "imagen": null
+    },
+    {
+      "nombre": "Smartwatch Fitness",
+      "precio": 299.99,
+      "stock": 52,
+      "descripcion": "Reloj inteligente con GPS, monitor de ritmo cardíaco, resistencia al agua 5ATM, batería de 7 días, seguimiento de actividades deportivas",
+      "imagen": null
+    },
+    {
+      "nombre": "Webcam 4K Streaming",
+      "precio": 179.99,
+      "stock": 63,
+      "descripcion": "Cámara web 4K Ultra HD, autofoco con IA, micrófono dual estéreo, corrección de luz automática, ideal para streaming y videollamadas",
+      "imagen": null
+    }
+  ]
+}

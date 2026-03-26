@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "test:database": "jest src/database --detectOpenHandles --forceExit",
+    "test:database:watch": "jest src/database --watch --detectOpenHandles",
+    "test:database:coverage": "jest src/database --coverage --detectOpenHandles --forceExit"
+  }
+}

@@ -1,0 +1,30 @@
+# Con variables de entorno y salida a archivo
+
+  docker run \
+  --rm \
+  --tag testid=prueba-001 \
+  --tag entorno=desarrollo \
+  -v $(pwd):/k6 \
+  -e K6_OUT=json=/k6/resultados.json \
+  grafana/k6:master run \
+  --vus 50 \
+  --duration 2m \
+
+  /k6/1.js
+
+  docker run \
+  --rm \
+  -v $(pwd):/k6 \
+  -e K6_OUT=json=/k6/resultados.json \
+  grafana/k6:master run \
+  --vus 50 \
+  --duration 10s \
+  /k6/1.js
+
+
+  docker run \
+  --rm \
+  -v $(pwd):/k6 \
+  -e K6_OUT=json=/k6/resultados.json \
+  grafana/k6:master run \
+  /k6/1.js

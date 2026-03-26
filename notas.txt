@@ -1,3 +1,6 @@
+
+#backend
+
 # Crear nuevo proyecto (modo interactivo)
 nest new nombre-proyecto
 
@@ -277,3 +280,19 @@ https://www.ilovepdf.com/es/comprimir_pdf
 #este es mejor opcion que el liveserver
 npm install -g http-server
 http-server dist/frontend/browser
+
+huggingface-------
+modelos de ia
+https://huggingface.co/models
+
+
+readme--------
+permite visualizar el readme
+control + shift + v
+
+
+Globally for all projects: Set the configuration globally using the npm config command.
+bash
+npm config set ignore-scripts true
+
+npm ignore-scripts refers to methods for preventing npm from automatically running lifecycle scripts (like preinstall, install, and postinstall) during the package installation process. This is a key security practice to mitigate supply chain attacks from malicious packages.

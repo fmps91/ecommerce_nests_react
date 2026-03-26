@@ -1,0 +1,129 @@
+
+docker ps | grep broker
+
+# 1. Levantar Kafka
+docker compose -f kafka.yml up -d
+
+# 2. Verificar que Kafka está listo
+docker logs broker | grep "started"
+
+# 3. Crear un topic
+docker exec broker kafka-topics --create \
+  --topic test-topic \
+  --bootstrap-server localhost:9092 \
+  --partitions 3 \
+  --replication-factor 1
+
+# 4. Ver topics creados
+docker exec broker kafka-topics --list --bootstrap-server localhost:9092
+
+# 5. Enviar mensajes
+docker exec -it broker kafka-console-producer \
+  --topic test-topic \
+  --bootstrap-server localhost:9092
+
+# (escribe: "Hola Kafka", luego Enter, luego Ctrl+C)
+
+# 6. Consumir mensajes para confirmar
+docker exec broker kafka-console-consumer \
+  --topic test-topic \
+  --bootstrap-server localhost:9092 \
+  --from-beginning
+
+
+las 5 apis de kafka
+
+- admin api
+- producer api
+- consumer api
+- streams api 
+- connect api
+
+la arquitectura de kafka es:
+
+- brokers (servidores)
+es una instancia de kafka con un ID unico que 
+responde a solicitudes de productores y consumidores.
+cada broker contiene particiones de topics. cada
+broker puede manejar multiples particiones de 
+diferentes topics.
+
+- topics (temas)
+es una categoria o flujo donde se pueden publicar mensajes. 
+kafka organiza los datos en topics, que funcionan como buzones 
+de correo. cada topic tiene las siguientes características 
+
+
+    - particiones: un topoc se divide en una o mas
+      particiones. Esto permite la distribucion de
+      datos y la paralelizacion del procesamiento.
+    - retencion: kafka puede almacenar datos durante un
+      tiempo o hasta alcanzar un limite de tamaño 
+      determinados por el administrador.
+
+
+- partitions (particiones)
+son los subconjuntos de un topic con un identificador unico.
+almacenan un subconjunto de los datos del topic. las
+particiones permiten escalbilidad al distribuir los datos
+en multiples nodos. cada mensaje dentro de una particion
+tiene un offset, que es su posicion unica.
+
+- producers (productores):
+son los clientes que envian datos a kafka.
+los productores escriben datos en topics.
+
+- consumers (consumidores):
+son los clientes que leen datos de kafka.
+los consumidores pueden agruparse en grupos (
+consumer groups), lo que permite compartir el 
+procesamiento de los datos entre multiples 
+consumidores.
+
+- cluster: esta compuesto por uno o mas brokers
+que trabajan juntos para gestioar y almacenar los datos
+enviados a kafka.
+
+- consumer groups: son grupos de consumidores que
+permiten distribuir el procesamiento de mensajes 
+entre varios consumidores. cada particion de un topic
+es asignada a un unico consumidor dentro de un grupo,
+lo que garantiza que no haya duplicacion de 
+procesamiento dentro del grupo.
+
+- replication (replicacion):
+kafka replica los datos de las particiones para 
+garantizar la durabilidad y la disponibilidad. una
+pariticion puede tener una o mas replicas distribuidas
+en varios brokers. entre ellas, una se denomina lider,
+y el resto son replicas segundarias.
+
+- kafka connect (conectores):
+son los conectores que permiten conectar kafka 
+con otros sistemas.
+
+- kafka streams (streams de datos):
+son los streams de datos que permiten procesar 
+datos en tiempo real.
+
+
+- admin api
+el admin api es una interfaz programatica que permite
+gestionar y monitorear clusteres de kafka
+
+facilita la automatizacion y administracion de recursos
+como topics, brockers y configuraciones, sin necesidad
+de depender de herramientas externas o comandos manuales
+
+funciones 
+* gestion de topics: creacion, modificacion, eliminacion
+y consulta
+* gestion de particiones
+* consultar metadatos del cluster: obtencion de detalles
+de los brokers, topics, particiones y replicas
+* configuracion de brokers y topics 
+* monitoreo del estado del cluster
+
+parte practica
+
+https://www.youtube.com/watch?v=QN2OdHb3_38&list=PLtdeXn2f7ZbMfoKvZ95r1mpmJzka2B6g9&index=8
