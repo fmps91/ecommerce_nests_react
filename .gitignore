@@ -1,6 +1,6 @@
 # Nestjs specific
-/frontend/dist
-/frontend/node_modules
+/backend_nest/dist
+/backend_nest/node_modules
 /build
 /tmp
 
