@@ -1,0 +1,3 @@
+docker run  -d --name redis -p 6379:6379 redis:trixie
+
+docker run -v /redis/conf:/usr/local/etc/redis -d --name redis -p 6379:6379 redis:trixie

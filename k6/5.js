@@ -1,8 +1,8 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
-const data = JSON.parse(open('./3.json'));
-const rols = data.productos;
+const data = JSON.parse(open('./5.json'));
+const rols = data.rols;
 
 export const options = {
   vus: 1,  // Un solo usuario virtual para controlar el orden
@@ -11,17 +11,17 @@ export const options = {
 
 export default function () {
   // Usar __ITER que es el número de iteración actual (0-index)
-  const producto = productos[__ITER % productos.length];
+  const producto = rols[__ITER % rols.length];
   
-  console.log(`\n📦 Iteración ${__ITER + 1}/${productos.length}`);
-  console.log(`Producto: ${producto.nombre}`);
-  console.log(`Precio: $${producto.precio}`);
-  console.log(`Stock: ${producto.stock}`);
+  console.log(`\n📦 Iteración ${__ITER + 1}/${rols.length}`);
+  console.log(`Producto: ${rols.nombre}`);
+  console.log(`Precio: $${rols.precio}`);
+  console.log(`Stock: ${rols.stock}`);
   
   const payload = JSON.stringify({
-    nombre: producto.nombre,
-    precio: producto.precio,
-    stock: producto.stock,
+    nombre: rols.nombre,
+    precio: rols.precio,
+    stock: rols.stock,
     descripcion: producto.descripcion,
     imagen: producto.imagen
   });

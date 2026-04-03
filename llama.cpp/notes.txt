@@ -1,0 +1,94 @@
+https://github.com/ggml-org/llama.cpp/blob/master/docs/install.md
+
+comandos para usar llama.cpp
+
+instalacion
+brew install llama.cpp
+
+
+brew list llama.cpp
+
+
+esto es para Apple Silicon
+
+¿Cuánta RAM tienes?
+RAM                         Modelo recomendado
+8 GB                        ggml-org/gemma-3-4b-it-GGUF:Q4_K_M
+16 GB                       bartowski/Meta-Llama-3.1-8B-Instruct-GGUF:Q4_K_M
+32 GB+                      bartowski/Meta-Llama-3.1-70B-Instruct-GGUF:Q4_K_M
+
+¿Qué es un token?
+Un token es aproximadamente ¾ de una palabra en inglés. Por ejemplo:
+
+512 tokens ≈ ~380 palabras
+1024 tokens ≈ ~760 palabras
+2048 tokens ≈ ~1500 palabras
+
+¿Cuánto poner según tu uso?
+Uso                         Valor recomendado
+Respuestas cortas / chat        -n 512
+Respuestas medianas             -n 1024
+Textos largos / código          -n 2048
+Sin límite                      -n -1
+
+Flag        Qué controla
+-c 2048     Contexto — cuánto texto recuerda la conversación
+-n 2048     Tokens generados — largo máximo de cada respuesta
+
+
+bash# 1. Crear carpeta de modelos
+mkdir Users/f/opt/llama/models
+
+bash# 2. Verificar que la carpeta se creo
+ls -la /Users/f/opt/llama/models
+
+bash# 3. Descargar el modelo
+curl -L \
+  "https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF/resolve/main/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf" \
+  -o /Users/f/opt/llama/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf
+
+#esto esta corriendo en ui del navegador en el 0.0.0.0:8081
+
+docker run -p 8081:8081 \
+  --name LlamaServer \
+  -v /Users/f/opt/llama/models:/models \
+  ghcr.io/ggml-org/llama.cpp:server \
+  -m /models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf \
+  --port 8081 --host 0.0.0.0 -c 2048 -n 2048
+
+
+
+📡 Endpoints disponibles
+Endpoint    Descripción
+GET         http://localhost:8081 UI web para chatear
+POST        http://localhost:8081/v1/chat/completions API de chat (compatible OpenAI)
+POST        http://localhost:8081/v1/completions API de completions
+GET         http://localhost:8081/v1/models Lista de modelos cargados
+GET         http://localhost:8081/health Estado del servidor
+
+
+#listar modelos
+curl http://localhost:8081/v1/models
+
+#estado del servidor
+curl http://localhost:8081/health
+
+#si quieres que funcione con el curl
+curl http://localhost:8081/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "llama",
+    "messages": [
+      {"role": "user", "content": "Hola, ¿cómo estás?"}
+    ]
+  }'
+
+
+curl http://localhost:8081/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "llama",
+    "messages": [
+      {"role": "user", "content": "Hola, ¿cómo estás?"}
+    ]
+  }'
