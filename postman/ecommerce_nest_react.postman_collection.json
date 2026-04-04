@@ -1,0 +1,1058 @@
+{
+  "info": {
+    "_postman_id": "623f79f7-f0ae-4e27-a434-5ba67c822375",
+    "name": "ecommerce_nest_react",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "7389724"
+  },
+  "item": [
+    {
+      "name": "v1",
+      "item": [
+        {
+          "name": "auth",
+          "item": [
+            {
+              "name": "login",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\":\"f@ejemplo1.com\",\n    \"password\":\"password123\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/auth/login",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "register",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"password123\",\n  \"name\": \"John Doe\",\n  \"roleId\": \"4e74ee30-a01a-4f39-a3c0-d81b2f1e7e84\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/auth/register",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "profile",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlM2Q2YTU2My1hNmQ4LTQwN2QtYTg5My1mM2Q1NGMzZDNkNGEiLCJuYW1lIjoiSnVhbiBQw6lyZXoiLCJyb2wiOiJBRE1JTiIsImlhdCI6MTc3MzM0NzU2MywiZXhwIjoxNzczNDMzOTYzfQ.xrlMGcSBpQcBFtRau4TzWQic5LQfksqsiXo4sadX8II",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/auth/profile",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "profile"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "sendEmail",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\":\"ellidate92@gmail.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/auth/mail-test",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "mail-test"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "users",
+          "item": [
+            {
+              "name": "create",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"f@ejemplo3.com\",\n  \"password\": \"password123\",\n  \"name\": \"Juan Pérez\",\n  \"roleId\": \"53a3d144-e6cd-41c0-8027-2d274e2fd429\",\n  \"isActive\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/users",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "users"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "findAll",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/users?page=1&limit=1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "users"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "findAllSimple",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/users",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "users"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "findOne",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/users/01bf768c-ccfd-46bc-afef-fb8aec30d6f6",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "users",
+                    "01bf768c-ccfd-46bc-afef-fb8aec30d6f6"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "",
+                    "type": "text",
+                    "disabled": true
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"Juan Pérez Rivas\",\n  \"isActive\": true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/users/01bf768c-ccfd-46bc-afef-fb8aec30d6f6",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "users",
+                    "01bf768c-ccfd-46bc-afef-fb8aec30d6f6"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/users/01bf768c-ccfd-46bc-afef-fb8aec30d6f6",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "users",
+                    "01bf768c-ccfd-46bc-afef-fb8aec30d6f6"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "toggle-active",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/users/51c66060-7e18-4eee-a0a0-022eca966c99/toggle-active",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "users",
+                    "51c66060-7e18-4eee-a0a0-022eca966c99",
+                    "toggle-active"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "orders",
+          "item": [
+            {
+              "name": "createOrder",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"userId\": \"8af58b13-87b5-4254-954d-8add6d11d888\",\n    \"items\": [\n        {\n            \"productId\": \"de42a638-1af6-4aa5-84f9-690143428732\",\n            \"productName\": \"Laptop Gaming1\",\n            \"unitPrice\": 250.00,\n            \"quantity\": 12,\n            \"subtotal\": 250.00\n        },\n        {\n            \"productId\": \"888cbb2f-f986-451a-93c5-42a701be3cf5\",\n            \"productName\": \"Mouse Inalámbrico1\",\n            \"unitPrice\": 49.99,\n            \"quantity\": 12,\n            \"subtotal\": 149.99\n        }\n    ],\n    \"subtotal\": 499.99,\n    \"total\": 499.99,\n    \"status\": \"PENDING\",\n    \"notes\": \"Entregar en horario laboral\",\n    \"shippingAddress\": {\n        \"street\": \"Av. Principal 123\",\n        \"city\": \"Ciudad de México\",\n        \"state\": \"CDMX\",\n        \"zipCode\": \"12345\",\n        \"country\": \"México\"\n    },\n    \"billingAddress\": {\n        \"street\": \"Av. Principal 123\",\n        \"city\": \"Ciudad de México\",\n        \"state\": \"CDMX\",\n        \"zipCode\": \"12345\",\n        \"country\": \"México\"\n    }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/orders",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "orders"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "createOrder Copy",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"b4bfa4da-a8d1-4f08-aca9-9b4490aa5c92\",\n  \"itemsIds\": [\"8f8e03e8-c7ec-4521-841c-c4c05db8e895\", \"9490efbd-ce96-4299-bcd4-6a72382502d8\"],\n  \"userName\": \"Juan Pérez\",\n  \"paymentMethod\": \"credit_card\",\n  \"items\": [\n    {\n      \"productId\": \"8f8e03e8-c7ec-4521-841c-c4c05db8e895\",\n      \"productName\": \"Laptop Gaming\",\n      \"unitPrice\": 250.00,\n      \"quantity\": 1,\n      \"subtotal\": 250.00\n    },\n    {\n      \"productId\": \"9490efbd-ce96-4299-bcd4-6a72382502d8\",\n      \"productName\": \"Mouse Inalámbrico\",\n      \"unitPrice\": 49.99,\n      \"quantity\": 1,\n      \"subtotal\": 149.99\n    }\n  ],\n  \"subtotal\": 299.99,\n  \"total\": 299.99,\n  \"status\": \"PENDING\",\n  \"notes\": \"Entregar en horario laboral\",\n  \"shippingAddress\": {\n    \"street\": \"Av. Principal 123\",\n    \"city\": \"Ciudad de México\",\n    \"state\": \"CDMX\",\n    \"zipCode\": \"12345\",\n    \"country\": \"México\"\n  },\n  \"billingAddress\": {\n    \"street\": \"Av. Principal 123\",\n    \"city\": \"Ciudad de México\",\n    \"state\": \"CDMX\",\n    \"zipCode\": \"12345\",\n    \"country\": \"México\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/orders",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "orders"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "findAll",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/orders?page=1&limit=1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "orders"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "findAllSimple",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/orders/all",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "orders",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "findMy-orders",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/orders/my-orders/b4bfa4da-a8d1-4f08-aca9-9b4490aa5c92",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "orders",
+                    "my-orders",
+                    "b4bfa4da-a8d1-4f08-aca9-9b4490aa5c92"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "findStats",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/orders/stats",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "orders",
+                    "stats"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "findOne",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/orders/d80d6d2e-d8fc-4f8c-8aa7-862ed62b4d88",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "orders",
+                    "d80d6d2e-d8fc-4f8c-8aa7-862ed62b4d88"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userId\": \"8af58b13-87b5-4254-954d-8add6d11d888\",\n  \"items\": [\n    {\n      \"productId\": \"8f8e03e8-c7ec-4521-841c-c4c05db8e895\",\n      \"productName\": \"Laptop Gaming\",\n      \"unitPrice\": 210.00,\n      \"quantity\": 2,\n      \"subtotal\": 420.00\n    },\n    {\n      \"productId\": \"9490efbd-ce96-4299-bcd4-6a72382502d8\",\n      \"productName\": \"Mouse Inalámbrico\",\n      \"unitPrice\": 49.99,\n      \"quantity\": 4,\n      \"subtotal\": 149.99\n    }\n  ],\n  \"subtotal\": 299.99,\n  \"total\": 299.99,\n  \"status\": \"PROCESSING\",\n  \"notes\": \"Entregar en horario laboral\",\n  \"shippingAddress\": {\n    \"street\": \"Av. Principal 1234\",\n    \"city\": \"Ciudad de México\",\n    \"state\": \"CDMX\",\n    \"zipCode\": \"12345\",\n    \"country\": \"México\"\n  },\n  \"billingAddress\": {\n    \"street\": \"Av. Principal 1234\",\n    \"city\": \"Ciudad de México\",\n    \"state\": \"CDMX\",\n    \"zipCode\": \"12345\",\n    \"country\": \"México\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/orders/cbd68da6-8fcc-4469-b1a2-3e1e9792142b",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "orders",
+                    "cbd68da6-8fcc-4469-b1a2-3e1e9792142b"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "products",
+          "item": [
+            {
+              "name": "create",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"nombre\": \"Monitor 42K\",\n    \"precio\": 1199.99,\n    \"stock\": 20,\n    \"descripcion\": \"Monitor de 27 pulgadas, resolución 4K, panel IPS, 60Hz\",\n    \"imagen\": null\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/products",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "products"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "findAll",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/products?page=1&limit=1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "products"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "findSimple",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/products/all",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "products",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "findId",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/products/0915d22d-58fb-4486-86ce-727119476301",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "products",
+                    "0915d22d-58fb-4486-86ce-727119476301"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"nombre\": \"Monitor 4K ultra plus\",\n    \"precio\": 399.99,\n    \"stock\": 10,\n    \"descripcion\": \"Monitor de 29 pulgadas, panel IPS, 120Hz\",\n    \"imagen\": null\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/products/0915d22d-58fb-4486-86ce-727119476301",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "products",
+                    "0915d22d-58fb-4486-86ce-727119476301"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/products/0915d22d-58fb-4486-86ce-727119476301",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "products",
+                    "0915d22d-58fb-4486-86ce-727119476301"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "rols",
+          "item": [
+            {
+              "name": "create",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"CUSTOMER\",\n  \"description\": \"Administrator role with full permissions\",\n  \"permissions\": [\n    \"view_products\",\n    \"create_orders\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/roles",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "roles"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "findAll",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/roles",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "roles"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "findId",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/roles/4e74ee30-a01a-4f39-a3c0-d81b2f1e7e84",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "roles",
+                    "4e74ee30-a01a-4f39-a3c0-d81b2f1e7e84"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "findName",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/roles/name/CUSTOMER",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "roles",
+                    "name",
+                    "CUSTOMER"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "findPermissions",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/roles/4ceb869e-51d9-40fb-8e31-cf8ae88d05fb/permissions",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "roles",
+                    "4ceb869e-51d9-40fb-8e31-cf8ae88d05fb",
+                    "permissions"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "update",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"Administrator role with full permissions\",\n  \"permissions\": [\n    \"view_products\",\n    \"create_orders\",\n    \"update orders\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/roles/4ceb869e-51d9-40fb-8e31-cf8ae88d05fb",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "roles",
+                    "4ceb869e-51d9-40fb-8e31-cf8ae88d05fb"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "permissionsadd",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"permissions\": [\n    \"manage inventory\",\n    \"manage customers\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/roles/4ceb869e-51d9-40fb-8e31-cf8ae88d05fb/permissions/add",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "roles",
+                    "4ceb869e-51d9-40fb-8e31-cf8ae88d05fb",
+                    "permissions",
+                    "add"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "permissionsremove",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"permissions\": [\n    \"manage inventory\",\n    \"manage customers\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/roles/4ceb869e-51d9-40fb-8e31-cf8ae88d05fb/permissions/remove",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "roles",
+                    "4ceb869e-51d9-40fb-8e31-cf8ae88d05fb",
+                    "permissions",
+                    "remove"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "delete",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/roles/d5d8815b-b019-4322-b752-a298b88af76d",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "roles",
+                    "d5d8815b-b019-4322-b752-a298b88af76d"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "assignRoleToUser",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"userId\":\"e3d6a563-a6d8-407d-a893-f3d54c3d3d4a\",\n    \"roleId\":\"4e74ee30-a01a-4f39-a3c0-d81b2f1e7e84\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/v1/roles/assign",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "v1",
+                    "roles",
+                    "assign"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "healtcheck",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/app",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "app"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          "try {",
+          "    const response = await pm.sendRequest({",
+          "        url: \"https://postman-echo.com/get\",",
+          "        method: \"GET\"",
+          "    });",
+          "",
+          "    console.log(response.json());",
+          "} catch (err) {",
+          "    console.error(err);",
+          "}"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}

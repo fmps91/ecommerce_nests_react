@@ -5,7 +5,7 @@ comandos para usar llama.cpp
 instalacion
 brew install llama.cpp
 
-
+lo que estás haciendo es buscar si existe un paquete con ese nombre en la lista de paquetes instalados.
 brew list llama.cpp
 
 
@@ -83,12 +83,12 @@ curl http://localhost:8081/v1/chat/completions \
     ]
   }'
 
-
-curl http://localhost:8081/v1/chat/completions \
+#esta peticion es diferente a la anterior
+#es con contexto 
+curl -X POST http://localhost:8081/v1/completions \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "llama",
-    "messages": [
-      {"role": "user", "content": "Hola, ¿cómo estás?"}
-    ]
+    "model": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+    "prompt": "Hola, ¿cómo estás?",
+    "n_predict": 512
   }'
